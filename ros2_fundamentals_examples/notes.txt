@@ -1,0 +1,91 @@
+Watch this playlist first to setup ROS 2:
+https://youtube.com/playlist?list=PLNWNEEf8BvG6z60R4r9_wQ6Ekmqj-BmFr&si=u79OkUZVeubZuNIx
+
+These notes are based on this playlist: 
+https://youtube.com/playlist list=PLNWNEEf8BvG64FVZT4IdieI1PuYnHkUrt&si=5Wlnw74Cjbgjebeu
+
+Video 1: ROS2 Package Setup
+CD into topmost SRC directory in your ROS 2 workspace, then type the following command to create a ROS2 package:
+
+  ros2 pkg create --build-type ament_cmake --license Apache-2.0 <package name>
+
+* ament_cmake: Makes a C++ ROS2 package
+* Apache-2.0: Distribution license, it basically makes this code open source 
+* <package name>: Put name of package here
+
+Then, to build the project:
+
+  colcon build  
+
+Then, to check if the build worked:
+
+  ros2 pkg list
+  
+* Search for the package you made
+
+Kinda extra but super helpful: To more easily build projects in the ROS 2 workspace,
+
+  echo "alias build='cd ~/<workspace name> && colcon build'" >> ~/.bashrc && source ~/.bashrc
+  
+* <workspace name>: Replace with name of your ROS 2 workspace's name
+* I guess this only works for Linux distros that use bashrc, I'm just using Ubuntu so idk
+* Now you can just type "build" to build the projects
+
+To only build a specific package instead of all the packages in the workspace:
+
+  colcon build --packages-select <package name>
+  
+* <package name>: Replace with name of specific package you want to build
+
+There's a lot of updating, upgrading, and downloading after this, just watch the video.
+
+Video 2: How To Create a ROS2 Python Publisher
+Name of folder housing publisher (and maybe other code) needs to be the same as the root package name.
+In this case the folder is named ros2_fundamental_examples for that reason.
+
+Syntax for README.md file:
+https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax
+
+
+Update the package.xml file to include the following:
+
+ <buildtool_depend>ament_cmake_python</buildtool_depend>
+
+  <depend>rclcpp</depend>
+  <depend>rcply</depend>
+  <depend>std_msgs</depend>
+
+Also, update the <description> and <maintainer> tag values as necessary.
+
+CMakeLists.txt file defines how a ROS 2 package should be built. 
+It is used by the ROS 2 system for building the code into executables.
+XML file basically is to let the the build know which packages are needed.
+The dependencies should be placed in both files for these reasons.
+
+Check the CMakeLists.txt updates in the video, some very important but long and tedious stuff.
+
+To check which topics are currently running, run:
+  ros2 topic list
+
+To check the contents of a particular running topic:
+  ros2 topic <topic name>
+
+To check frequncy in hz (per second) of a running topic:
+  ros2 topic hz <topic name>
+
+To get more info about a running topic:
+  ros2 topic info <topic name>
+* Add "--verbose" at the end after <topic name> to get more details.
+
+To get more info on ROS 2 topic functions: 
+https://docs.ros.org/en/rolling/Tutorials/Beginner-CLI-Tools/Understanding-ROS2-Topics/Understanding-ROS2-Topics.html
+
+To list currently active nodes:
+  ros2 node list
+
+To get info about an active node:
+  ros2 node info <node name>
+
+To check how all the nodes are communicating:
+  rqt_graph
+* Click the refresh button on upper left of graph window if nodes don't show up.
