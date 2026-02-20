@@ -39,6 +39,7 @@ To only build a specific package instead of all the packages in the workspace:
 
 There's a lot of updating, upgrading, and downloading after this, just watch the video.
 
+
 Video 2: How To Create a ROS2 Python Publisher
 Name of folder housing publisher (and maybe other code) needs to be the same as the root package name.
 In this case the folder is named ros2_fundamental_examples for that reason.
@@ -89,3 +90,24 @@ To get info about an active node:
 To check how all the nodes are communicating:
   rqt_graph
 * Click the refresh button on upper left of graph window if nodes don't show up.
+
+
+Video 3: How to Create a ROS 2 Python Subscriber
+Make and program the py_minimal_subscriber node in the ros2_fundamental_examples subfolder.
+Add the py_minimal_subscriber to the Python script install list in the CMakeLists.txt file.
+
+In real production environments, we would usually create a bash script to run the publisher and
+subscriber nodes in order.
+
+To do this, first make or ensure you have a 'scripts' folder in the upper level ros2_fundamental_examples folder.
+
+Create the minimal_pub_sub_launch.sh bash script in the scritps folder and follow the video instructions.
+
+CD into the scripts folder after finishing writing the bash script.
+To make the script an executable:
+  sudo chmod +x <script name>
+
+To check the permission of the newly made executable:
+  ls -la
+
+Add the scripts folder to the CMakeLists.txt file where the necessary folders to be installed are written.

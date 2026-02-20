@@ -37,7 +37,7 @@ include_directories(
 
 # Create designated location where we are going to copy necessary files 
 install (
-  DIRECTORY ros2_fundamentals_examples # files for development
+  DIRECTORY ros2_fundamentals_examples scripts # files for development
   DESTINATION share/${PROJECT_NAME} # files for actual build
 )
 
@@ -62,6 +62,7 @@ ament_python_install_package(${PROJECT_NAME})
 install (
   PROGRAMS
   ros2_fundamentals_examples/py_minimal_publisher.py
+  ros2_fundamentals_examples/py_minimal_subscriber.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
