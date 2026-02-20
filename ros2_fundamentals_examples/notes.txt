@@ -111,3 +111,12 @@ To check the permission of the newly made executable:
   ls -la
 
 Add the scripts folder to the CMakeLists.txt file where the necessary folders to be installed are written.
+
+
+Video 4: How to Create a ROS 2 C++ Publisher
+Make a new "cpp_minimal_publisher.cpp" file in the src folder of the ros2_fundamental_examples folder.
+
+Write the code for the cpp_minimal_publisher file and change the necessary parameters in the CMakeLists.txt file.
+
+Don't worry about the error sqwiggles on the #inlcudes in the cpp_minimal_publisher, they don't actually affect
+anything.

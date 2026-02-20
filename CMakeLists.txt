@@ -29,8 +29,8 @@ include_directories(
 )
 
 # Tell CMake to create an executable target
-#add_executable(minimal_cpp_publisher src/minimal_cpp_publisher.cpp)
-#ament_target_dependencies(minimal_cpp_publisher ${dependencies}) # Tells compiler the dependencies needed for the executable
+add_executable(minimal_cpp_publisher src/cpp_minimal_publisher.cpp)
+ament_target_dependencies(minimal_cpp_publisher ${dependencies}) # Tells compiler the dependencies needed for the executable
 
 #add_executable(minimal_cpp_subscriber src/minimal_cpp_subscriber.cpp)
 #ament_target_dependencies(minimal_cpp_subscriber ${dependencies})
@@ -48,12 +48,12 @@ install (
 )
 
 # Install C++ executables
-#install (
-# TARGETS
-# minimal_cpp_publisher
+install (
+  TARGETS
+  minimal_cpp_publisher
 # minimal_cpp_subscriber
-# DESTINATION lib/${PROJECT_NAME}
-#)
+  DESTINATION lib/${PROJECT_NAME}
+)
 
 # Install Python modules for import
 ament_python_install_package(${PROJECT_NAME})
