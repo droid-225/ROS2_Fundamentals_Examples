@@ -120,3 +120,11 @@ Write the code for the cpp_minimal_publisher file and change the necessary param
 
 Don't worry about the error sqwiggles on the #inlcudes in the cpp_minimal_publisher, they don't actually affect
 anything.
+
+
+Video 5: How to Create a Subscriber Node in C++
+I guess the src folder in the inner ros2_fundamental_examples folder is for C++ files.
+Make the C++ minimal subscriber node in that.
+
+Also, I guess the include bug affects all the C++ files (atleast so far), it doesn't actually affec them though,
+just a visual bug.

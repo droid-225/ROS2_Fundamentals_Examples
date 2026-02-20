@@ -11,9 +11,6 @@ find_package(ament_cmake_python REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(rclpy REQUIRED)
 find_package(std_msgs REQUIRED)
-# uncomment the following section in order to fill in
-# further dependencies manually.
-# find_package(<dependency> REQUIRED)
 
 # Sets the currently required dependencies so that build is more simple
 set(dependencies
@@ -32,8 +29,8 @@ include_directories(
 add_executable(minimal_cpp_publisher src/cpp_minimal_publisher.cpp)
 ament_target_dependencies(minimal_cpp_publisher ${dependencies}) # Tells compiler the dependencies needed for the executable
 
-#add_executable(minimal_cpp_subscriber src/minimal_cpp_subscriber.cpp)
-#ament_target_dependencies(minimal_cpp_subscriber ${dependencies})
+add_executable(minimal_cpp_subscriber src/cpp_minimal_subscriber.cpp)
+ament_target_dependencies(minimal_cpp_subscriber ${dependencies})
 
 # Create designated location where we are going to copy necessary files 
 install (
@@ -51,7 +48,7 @@ install (
 install (
   TARGETS
   minimal_cpp_publisher
-# minimal_cpp_subscriber
+  minimal_cpp_subscriber
   DESTINATION lib/${PROJECT_NAME}
 )
 
