@@ -128,3 +128,5 @@ Make the C++ minimal subscriber node in that.
 
 Also, I guess the include bug affects all the C++ files (atleast so far), it doesn't actually affec them though,
 just a visual bug.
+
+ROS 2 is lanugage agnostic, so you could use a C++ publisher and have a Python subscriber and vice versa.
