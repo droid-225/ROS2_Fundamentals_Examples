@@ -134,8 +134,10 @@ Turns out just using the GCC compilier option when prompted removes the error me
 ROS 2 is lanugage agnostic, so you could use a C++ publisher and have a Python subscriber and vice versa.
 
 
-Video 6: How to Create Unit Tesst with Pytest
+Video 7: How to Create Unit Test with Pytest
 As the name suggests, Pytest is used to create unit tests for Python code.
+
+All the tests (both pytest and gtest) are in the test folder.
 
 To install all necessary dependencies before testing (and maybe just in general too):
   rosdep install --from-paths src --ignore-src -r -y
@@ -159,3 +161,18 @@ To check the final results of the tests:
 
 To get more info about the results, mainly about which tests failed:
   colcon test-result --all --verbose
+
+
+Video 8: How to Create Unit Tests with GTest
+To run the tests, first cd into root workspace folder,
+
+Then source the bash:
+  source ~/.bashrc
+
+To run the tests:
+  colcon test --packages-select <package name>
+
+To see more details:
+  colcon test --packages-select <package name> --event-handlers console_direct+
+
+The syntax for seeing the results is same as the pytest code.

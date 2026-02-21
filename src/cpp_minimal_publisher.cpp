@@ -47,6 +47,7 @@ class MinimalCppPublisher : public rclcpp::Node
     rclcpp::TimerBase::SharedPtr timer_; // Timer
 };
 
+#ifndef TESTING_EXCLUDE_MAIN // Required to not run this main method during testing
 int main(int argc, char * argv[]) 
 {
   rclcpp::init(argc, argv);
@@ -58,3 +59,4 @@ int main(int argc, char * argv[])
 
   return 0;
 }
+#endif
