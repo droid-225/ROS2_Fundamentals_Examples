@@ -176,3 +176,40 @@ To see more details:
   colcon test --packages-select <package name> --event-handlers console_direct+
 
 The syntax for seeing the results is same as the pytest code.
+
+
+Video 9: Coordinate Frame Basics and the Right Hand Rule of Robotics
+In robotics, the Z axis goes up, and X and Y axis make a 2D plane.
+
+Right-hand rule:
+Using the right hand, if the thumb points upwards, that is the Z-axis and the pointer finger points towards the X-axis
+while the middle finger points towards the Y-axis.
+
+Robotics also has the following rotations:
+* Roll: Rotation aroud the X-axis, like rotating your head side to side with each ear touching it's corresponding shoulder.
+* Pitch: Rotation around the Y-axis, like nodding your head up and down, like if you're saying yes. 
+* Yaw: Rotation around the Z-axis, like shaking your head left to right to say no.
+Point the right hand rule like a gun straight in fron of your face, like as if you are looking at your thumb as the
+sight of the gun. You can either rotate your head or the hand itself while keeping one of the axes stable in order \
+to better visualize the rotations.
+
+The world coordinate frame, often referred to as the "map frame" in most navigation tasks, serves as a fixed global
+reference point for all robots and objects in a given environment, it never moves or changes.
+
+The base frame is the frame attached to the robot's base. In immobile robots, it does not move, but in mobile robots, it moves
+as the robot navigates the environment.
+
+Sensor frames are the frames corresponding to each sensor.
+
+** RPLIDAR sensors are used in many robotics projects**
+
+Each joint on a robot has its own coordinate frame called a joint frame.
+
+End-effector frames are the frames at the very end of robotic-arms or other attachments on the robot.
+
+
+Video 10: Create and Visualize a Robotic Arm with URDF
+** NOTE: The code for this video is stored in the mycobot_ros2 folder in the upper src folder.
+** There should be a seperate git repository for this:
+    https://github.com/droid-225/MyCobot-ROS2
+    
